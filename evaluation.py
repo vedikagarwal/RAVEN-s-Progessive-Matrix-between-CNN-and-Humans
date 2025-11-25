@@ -355,13 +355,11 @@ def main():
         for result in csv_results:
             writer.writerow(result)
 
-    print("\n" + "="*60)
     print("FINAL SUMMARY")
-    print("="*60 + "\n")
+
 
     for dataset_name in sorted(results_by_dataset.keys()):
         print(f"Dataset: {dataset_name}")
-        print("=" * 37)
         for result in results_by_dataset[dataset_name]:
             if isinstance(result['accuracy'], float):
                 print(f"{result['checkpoint']}: {result['accuracy']:.4f}")
